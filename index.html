@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="Callback email notification">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+		<meta name="theme-color" content="#fafafa">
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="content">
+				<section class="hero">
+					<div class="hero-body">
+						<p class="title">
+							Форма обратной связи
+						</p>
+						<p class="subtitle">
+							Получено новое сообщение с сайта
+							<!-- <a href="<%= site.url %>"><%= site.title %></a> -->
+							<a href="#"><%= site.title %></a>
+						</p>
+					</div>
+				</section>
+
+
+				<article class="message">
+					<div class="message-header">
+						<p>Содержимое сообщения</p>
+					</div>
+					<div class="message-body">
+						<ul>
+							<li>
+								<b>Заголовок:</b>
+								<%= message.title %></li>
+							<li>
+								<b>Email:</b>
+								<%= message.email %></li>
+							<li>
+								<b>Имя:</b>
+								<%= message.name %></li>
+							<li>
+								<b>Телефон:</b>
+								<%= message.phone %></li>
+							<li>
+								<b>Сообщение:</b>
+								<%= message.message %></li>
+						</ul>
+
+						<span class="tag is-black">
+							<%= message.published_at %>
+						</span>
+					</div>
+				</article>
+
+
+				<a href="mailto:<%= message.email %>" class="button">Ответное письмо</a>
+				<a href="tel:<%= message.phone %>" class="button">Звонок</a>
+			</div>
+
+			<footer class="footer">
+				<div class="content has-text-centered">
+					<p>Система email-информирования
+						<a href="https://kondraland.ru">kondraland.ru</a>
+					</p>
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Add your site or application content here -->
+
+	</body>
+
+</html>
